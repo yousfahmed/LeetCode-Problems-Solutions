@@ -1,6 +1,6 @@
 class Solution {
 public:
-  vector<int> countSubTrees(int n, vector<vector<int>> edges, string labels) {
+  vector<int> countSubTrees(int n, vector<vector<int>> &edges, string& labels) {
     vector<vector<int>> adj(n);
     for (auto &e: edges) {
       adj[e[0]].emplace_back(e[1]);
