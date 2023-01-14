@@ -16,7 +16,7 @@ class Solution {
 
 
 public:
-  string smallestEquivalentString(string s1, string s2, string baseStr) {
+  string smallestEquivalentString(string &s1, string &s2, string &baseStr) {
     par = vector<int>(26);
     iota(par.begin(), par.end(), 0);
     for (int i = 0; i < s1.length(); ++i) {
