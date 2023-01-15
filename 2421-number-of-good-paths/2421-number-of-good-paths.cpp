@@ -1,5 +1,4 @@
 class Solution {
-  vector<vector<int>> adj;
   vector<int> par, sz;
 
   int findLeader(int u) {
@@ -10,10 +9,8 @@ class Solution {
 public:
   int numberOfGoodPaths(vector<int> &vals, vector<vector<int>> &edges) {
     const int n = vals.size();
-    adj = vector<vector<int>>(n);
     par = vector<int>(n), sz = vector<int>(n, 1);
     iota(par.begin(), par.end(), 0);
-    for (auto &e: edges) adj[e[0]].emplace_back(e[1]), adj[e[1]].emplace_back(e[0]);
     sort(edges.begin(), edges.end(), [&](const vector<int> &u, const vector<int> &v) {
       return max(vals[u[0]], vals[u[1]]) < max(vals[v[0]], vals[v[1]]);
     });
@@ -32,6 +29,5 @@ public:
       cout << '\n';
     }
     return res;
-
   }
 };
