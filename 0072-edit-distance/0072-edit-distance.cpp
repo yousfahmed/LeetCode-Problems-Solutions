@@ -1,6 +1,6 @@
 class Solution {
  public:
-  int minDistance(string word1, string word2) {
+  int minDistance(string &word1, string &word2) {
     const int m = word1.length();
     const int n = word2.length();
     vector<vector<int>> dp(m + 1, vector<int>(n + 1));
